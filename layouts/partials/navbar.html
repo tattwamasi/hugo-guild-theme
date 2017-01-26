@@ -1,0 +1,15 @@
+<header id="header">
+  <h1><a href={{relURL "/"}}>{{.Site.Params.guild.name }}</a></h1>
+  <nav id="nav">
+    <ul>
+      {{ range .Site.Menus.main }}
+      <li>
+          <a href="{{ relURL .URL }}">
+              {{ with .Identifier }}
+                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
+          </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,51 @@
+      <aside class="sidebar">
+
+        {{ if .Site.Params.guild.discord }}
+        <section id="discord">{{with .Site.Params.guild.discord.title}}<h3>{{.}}</h3>{{end}}
+          {{with .Site.Params.guild.discord.blurb}}<p>{{.}}</p>{{end}}
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/discord-widget/1.0/discord-widget.min.js"></script>
+          <script type="text/javascript">
+          discordWidget.init({
+            serverId: '{{ .Site.Params.guild.discord.ID }}',
+            /*title: 'Discord Widget Title',*/
+            join: true,
+            alphabetical: false,
+            theme: 'none',
+            hideChannels: ['Channel Name 1', 'Channel Name 2'],
+            showAllUsers: true,
+            allUsersDefaultState: false,
+            showNick: false
+          });
+          discordWidget.render();
+          </script>
+          <div class="discord-widget"></div>
+        </section>
+        <hr />
+        {{ end }}
+
+        {{ if .Site.Params.guild.warcraftlogsID }}
+        <section id="logs"><h3>Recent Logs</h3>
+          <iframe src="https://www.warcraftlogs.com/guilds/recent_reports/{{.Site.Params.guild.warcraftlogsID}}/" width="260" height="240" frameborder="0"></iframe>
+        </section>
+        <hr />
+        {{ end }}
+
+        {{ with .Site.Params.guild.recruitment }}
+        <section>
+          {{if .pic}}<a {{with .url}}href="{{relURL .}}"{{end}} class="image"><img src={{relURL .pic}} /></a>{{end}}
+          {{ with .blurb}}
+          <h3>Recruitment Info</h3>
+            <p>{{.|safeHTML}}</p>
+          {{end}}
+          {{with .url}}
+          <footer>
+            <ul class="actions">
+              <li><a href="{{relURL .}}" class="button">Learn More</a></li>
+            </ul>
+          </footer>
+          {{end}}
+        </section>
+
+        {{ end }}
+
+      </aside>

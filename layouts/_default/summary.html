@@ -1,0 +1,11 @@
+<article class="post">
+    {{ .Render "content-header"}}
+    <div class="group">
+    {{ .Summary }}
+    </div>
+    <footer>
+      {{ if .Truncated }}
+        <a href='{{ .RelPermalink }}'><nobr>Read more →</nobr></a>
+      {{ end }}
+    </footer>
+</article>

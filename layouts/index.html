@@ -1,0 +1,15 @@
+{{define "main"}}
+    <header>
+      <h2>About</h2>
+      <p>{{ .Site.Params.description | markdownify }}</p>
+    </header>
+    <section id="news" class="content">
+      <header><h2>News</h2><p>What we've been up to</p>
+      </header>
+      <ul class="alt">
+      {{ range where .Data.Pages "Section" "post" }}
+        <li>{{ .Render "summary" }}</li>
+      {{ end }}
+    </ul>
+    </section>
+{{end}}

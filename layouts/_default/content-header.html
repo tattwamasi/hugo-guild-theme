@@ -1,0 +1,17 @@
+<header>
+    <div class="title">
+      <h4><a href="{{ .RelPermalink }}">{{ .Title }} {{ if .Draft }}<em>:: DRAFT</em>{{end}}</a></h4>
+        {{ with .Description }}
+            <p>{{ . }}</p>
+        {{ end }}
+    </div>
+    <div class="meta">
+      <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>
+        {{ .Date.Format "January 2, 2006" }}
+      </time>
+      <span class="author">{{ .Params.author }}</span>
+      {{ if .Site.Params.includeReadingTime }}
+        <p>{{ .ReadingTime }} minute read</p>
+      {{ end }}
+    </div>
+</header>

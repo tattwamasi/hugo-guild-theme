@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section id="terms" class="content">
+  <div>
+    <h2 id="title">{{ .Title }}</h2>
+
+    {{ $data := .Data }}
+    {{ range $key,$value := .Data.Terms.ByCount }}
+    <h3><a href="{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a> {{ $value.Count }}</h3>
+    <ul>
+      {{ range $value.Pages.ByDate }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,67 @@
+<link href="https://fonts.googleapis.com/css?family={{.Site.Params.guild.namefont}}&text={{.Site.Params.guild.name}}" rel="stylesheet">
+<style>
+/* ======== Banner ============ */
+
+.banner-wrapper { overflow-y: hidden;}
+
+.banner {
+  background: url({{relURL "img/banner.jpg"}}) no-repeat center;
+  background-size: cover;
+  position: relative;
+  padding: 10% 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner small {
+	text-shadow: 1px 1px 5px white;
+	position: absolute;
+	text-align: right;
+	margin-left: auto;
+	float: right;
+	bottom: .25em;
+	right: .5em;
+}
+.banner-text {
+
+}
+.banner-text h1 {
+  font-family: '{{ replace .Site.Params.guild.namefont "+" " "}}',serif;
+  font-size: 80px;
+  font-weight: normal;
+  text-transform: none;
+	animation-name: lens-flip-focus;
+	animation-duration: 2s;
+	animation-fill-mode:both;
+}
+
+#header h1 {
+  font-family: '{{ replace .Site.Params.guild.namefont "+" " "}}',serif;
+}
+@keyframes lens-flip-focus {
+	0% {
+		opacity: .4;
+		text-shadow: 0 0 rgba(255,255,255,0), -45px -45px 0 red, -30px -30px 0 orange, -15px -15px 0 yellow, 0 0 0 green, 15px 15px 0 blue, 30px 30px 0 indigo, 45px 45px 0 violet;
+		transform: skew(45deg,60deg);
+		animation-timing-function: ease-in-out;
+	}
+	75% {
+		transform: skew(-10deg,-10deg);
+	}
+	80% {
+		text-shadow: 0px 0px 10px rgba(255,255,255,0.6), 0px 0px 30px rgba(255,255,255,0.4), 0px 0px 50px rgba(255,255,255,0.3), 0px 0px 180px rgba(255,255,255,0.3);
+		transform: skew(0deg,0deg);
+	}
+	95% {
+		text-shadow: 0 0 150px rgb(204,133,0), 0 0 60px rgb(204,133,0), 0 0 10px rgb(204,133,0);
+
+	}
+	100% {
+		color: rgba(254,208,120,1);
+		text-shadow: 0 0 30px rgba(204,133,0, 0.5), 0 0 5px rgba(204,133,0, 0.5);
+		opacity: 1;
+	}
+}
+</style>

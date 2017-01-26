@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section id="news" class="content">
+  <header>
+    <h2>{{.Title}}</h2>
+    <p>{{ .Description }}</p>
+  </header>
+  {{ .Content }}
+
+  {{ range .Data.Pages.GroupBy "Section" }}
+    <h3>{{.Key}}</h3>
+    <ul class="alt">
+      {{ range .Pages}}
+        <li>{{ .Render "summary" }}</li>
+      {{ end }}
+    </ul>
+  {{end}}
+</section>
+{{ end }}

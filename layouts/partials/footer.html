@@ -1,0 +1,46 @@
+
+
+<!-- Footer -->
+<footer id="footer" data-width="1280" data-height="415">
+  <div class="content">
+    <div class="inner">
+
+      {{ with .Site.Params.guild.contact }}
+      <section class="about">
+        {{if .pic}}<a {{with .url}}href="{{.}}"{{end}} class="image"><img src={{relURL .pic}} /></a>{{end}}
+        {{ with .blurb}}
+        <h3>Contact us</h3>
+          <p>{{.|safeHTML}}</p>
+        {{end}}
+        {{with .url}}
+        <footer>
+          <ul class="actions">
+            <li><a href="{{.}}" class="button">Contact us</a></li>
+          </ul>
+        </footer>
+        {{end}}
+      </section>
+
+      {{ end }}
+
+      <section class="social">
+        <ul class="icons">
+          {{partial "social" .}}
+        </ul>
+      </section>
+    </div>
+  </div>
+  <p class="copyright">{{ with .Site.Params.copyright }}{{ . | markdownify}}{{ else }}&copy; {{now.Format "2006" }}. All rights reserved.<br />{{end}}
+      <a href="https://github.com/tattwamasi">Site Design & Template by Tokotsi</a> | Powered by <a href="https://gohugo.io/">Hugo</a></p>
+</footer>
+
+<!-- Scripts -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+<script type="text/javascript" src={{ relURL "/js/prefixfree.jquery.js" }}></script>
+<script type="text/javascript" src={{ relURL "/js/jquery.sticky.js" }}></script>
+<script type='text/javascript' src={{ relURL "/js/guild.js" }}></script>
+<!-- <script type='text/javascript' src={{ relURL "/js/jquery.basic-parallax-scroll.js"}}></script>  -->
+
+<script src={{ relURL "js/jquery.dropotron.min.js"}}></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+{{ partial "footer_custom.html" . }}
