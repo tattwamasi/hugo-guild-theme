@@ -1,15 +1,11 @@
 +++
-author = "Mushoepi"
-categories = []
+author = "Cap'n Placeholder"
 description = ""
 draft=true
-featured = ""
+featured_image = ""
 featuredalt = ""
-featuredpath = ""
-linktitle = ""
+categories = ["News"]
 tags = []
-
 +++
 
 <!--more-->  
-

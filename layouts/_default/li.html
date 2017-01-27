@@ -1,0 +1,30 @@
+{{/*
+  li: A content view used to render a single piece of content as a
+  single list itemarticle, displaying title, basic metadata, and a link to the
+  full item.  It is similar to the summary content view, but more condensed, without
+  the content summary itself.
+*/}}
+
+<article>
+  <header>
+  <a href="{{ .RelPermalink }}">{{ .Title }} {{ if .Draft }}<em>:: DRAFT</em>{{end}}</a>
+  {{with .Params.author -}}
+  <span>, by {{ . }}</span>
+  {{- end}}
+  {{ if .Site.Params.includeReadingTime }}<span class="reading-time">, (~{{ .ReadingTime }} minute read)</span>{{- end -}}
+  <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>
+    {{ .Date.Format "January 2, 2006" }}
+  </time>
+</header>
+</article>
+{{/*  alternately: would really like to display a compact couple lines, including taxonomy groups
+  <article class="post">
+  {{ .Render "featured" }}
+  <div class="content group">
+    {{ .Render "content-header" }}
+    <footer>
+      {{.Render "content-taxonomy-groups"}}
+    </footer>
+  </div>
+</article>
+*/}}

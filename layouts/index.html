@@ -1,15 +1,34 @@
 {{define "main"}}
-    <header>
+    <header class="major">
       <h2>About</h2>
       <p>{{ .Site.Params.description | markdownify }}</p>
     </header>
+
     <section id="news" class="content">
-      <header><h2>News</h2><p>What we've been up to</p>
-      </header>
-      <ul class="alt">
-      {{ range where .Data.Pages "Section" "post" }}
-        <li>{{ .Render "summary" }}</li>
+      {{ if .Site.Params.recentNewsSummaryLimit }}
+      <section class="recent-news">
+          <header>
+          <h2>News</h2>
+        </header>
+        <ul class="recent-news alt">
+        {{ range first .Site.Params.recentNewsSummaryLimit (where .Data.Pages "Section" "post") }}
+          <li>{{ .Render "summary" }}</li>
+        {{ end }}
+        </ul>
+      </section>
       {{ end }}
-    </ul>
+
+      {{ if .Site.Params.recentItemListLimit }}
+      <section class="recent-posts">
+        <header>
+          <h2>Recent Items</h2>
+        </header>
+        <ul class="recent-posts alt">
+        {{ range first .Site.Params.recentItemListLimit (where .Data.Pages "Section" "post") }}
+          <li>{{ .Render "li" }}</li>
+        {{ end }}
+        </ul>
+      </section>
+      {{ end }}
     </section>
 {{end}}

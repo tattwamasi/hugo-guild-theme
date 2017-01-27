@@ -1,11 +1,19 @@
 <article class="post">
-    {{ .Render "content-header"}}
-    <div class="group">
-    {{ .Summary }}
+  {{ .Render "featured" }}
+  <div class="content group">
+    {{ .Render "content-header" }}
+    <div class="group post-body">
+      {{ .Summary }}
     </div>
     <footer>
+      {{.Render "content-taxonomy-groups"}}
+      {{/* printf "%#v" .Truncated */}}
       {{ if .Truncated }}
-        <a href='{{ .RelPermalink }}'><nobr>Read more →</nobr></a>
+      <ul class="actions vertical">
+        <li><a href='{{ .RelPermalink }}' class="button small"><nobr>Read more →</nobr></a></li>
+        {{ if .Site.Params.includeReadingTime }}<li class="reading-time">(~{{ .ReadingTime }} minute read)</li>{{- end -}}
+      </ul>
       {{ end }}
     </footer>
+  </div>
 </article>

@@ -1,17 +1,16 @@
 <header>
     <div class="title">
-      <h4><a href="{{ .RelPermalink }}">{{ .Title }} {{ if .Draft }}<em>:: DRAFT</em>{{end}}</a></h4>
+      <h5><a href="{{ .RelPermalink }}">{{ .Title }} {{ if .Draft }}<em>:: DRAFT</em>{{end}}</a></h5>
         {{ with .Description }}
-            <p>{{ . }}</p>
+            <p>{{ . | markdownify }}</p>
         {{ end }}
     </div>
     <div class="meta">
       <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>
         {{ .Date.Format "January 2, 2006" }}
       </time>
-      <span class="author">{{ .Params.author }}</span>
-      {{ if .Site.Params.includeReadingTime }}
-        <p>{{ .ReadingTime }} minute read</p>
-      {{ end }}
+      {{ with .Params.author -}}
+      <span class="author">by {{ . }}</span>
+      {{- end}}
     </div>
 </header>

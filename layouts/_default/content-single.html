@@ -1,0 +1,29 @@
+{{/*
+  content-single: A content view used to render a single article, displaying
+  header, content, footer, associated metadata, as well as disqus if enabled, etc.
+*/}}
+<section class="content">
+<article class="post group">
+  {{ .Render "featured" }}
+  <div class="content group">
+    {{ .Render "content-header" }}
+    <div class="post-body group">
+      {{ .Content }}
+    </div>
+    <footer>
+      {{ .Render "content-taxonomy-groups" }}
+    </footer>
+  </div>
+</article>
+{{/*
+{{ .Render "pagination" }}
+
+{{ if ne .Site.DisqusShortname "" }}
+    {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+        <article class="post">
+            {{ template "_internal/disqus.html" . }}
+        </article>
+    {{ end }}
+{{ end }}
+*/}}
+</section>

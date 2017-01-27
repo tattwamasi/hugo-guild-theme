@@ -1,0 +1,24 @@
+{{- /*
+Use .Site.Taxonomies to then go through the pages .Params, and build lists of
+the terms the page specifies.
+*/ -}}
+
+<ul class="stats">
+{{- range $taxonomyname, $identifier := $.Site.Params.taxonomyinmeta -}}
+  {{- if isset $.Params $taxonomyname -}}
+  {{- if ne (len ($.Param $taxonomyname)) 0 -}}
+    <ul class="stats-{{$taxonomyname}}">
+      <li>
+        {{- with $identifier -}}
+          <i class="{{- . -}}">&nbsp;</i>
+        {{- end -}}
+        {{- $taxonomyname -}}
+      </li>
+      {{- range  $.Param $taxonomyname -}}
+      <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}/{{ . | urlize }}">{{ . }}</a></li>
+      {{- end -}}
+    </ul>
+    {{- end -}}
+    {{- end -}}
+{{- end -}}
+</ul>

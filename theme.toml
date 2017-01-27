@@ -4,11 +4,11 @@
 name = "Guild"
 license = "MIT"
 licenselink = "https://github.com/tattwamasi/guild/blob/master/LICENSE.md"
-description = ""
+description = "A basic guild website theme"
 homepage = "https://github.com/tattwamasi/guild/"
-tags = ["", ""]
-features = ["", ""]
-min_version = 0.15
+tags = ["game", "guild", "blog"]
+features = ["html5", "css3"]
+min_version = 0.19
 
 [author]
   name = "Rob Arnold (Tokotsi)"
