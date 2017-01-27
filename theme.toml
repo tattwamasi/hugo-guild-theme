@@ -3,9 +3,9 @@
 
 name = "Guild"
 license = "MIT"
-licenselink = "https://github.com/tattwamasi/guild/blob/master/LICENSE.md"
+licenselink = "https://github.com/tattwamasi/hugo-guild-theme/blob/master/LICENSE.md"
 description = "A basic guild website theme"
-homepage = "https://github.com/tattwamasi/guild/"
+homepage = "https://github.com/tattwamasi/hugo-guild-theme/"
 tags = ["game", "guild", "blog"]
 features = ["html5", "css3"]
 min_version = 0.19
