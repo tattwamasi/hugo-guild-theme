@@ -4,8 +4,9 @@
     <h2 id="title">{{ .Title }}</h2>
 
     {{ $data := .Data }}
+    {{ printf "%#v" $data.Plural }}
     {{ range $key,$value := .Data.Terms.ByCount }}
-    <h3><a href="{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a> {{ $value.Count }}</h3>
+    <h3><a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a> {{ $value.Count }}</h3>
     <ul>
       {{ range $value.Pages.ByDate }}
       <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>

@@ -4,9 +4,9 @@
     <ul>
       {{ range .Site.Menus.main }}
       <li>
-          <a href="{{ relURL .URL }}">
+          <a href="{{ .URL }}">
               {{ with .Identifier }}
-                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}({{ .URL }})
+                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
           </a>
       </li>
       {{ end }}
