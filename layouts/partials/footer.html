@@ -30,7 +30,8 @@
       </section>
     </div>
   </div>
-  <p class="copyright">{{ with .Site.Params.copyright }}{{ . | markdownify}}{{ else }}&copy; {{now.Format "2006" }}. All rights reserved.<br />{{end}}
+  {{/* in hugo v19+ change the .Now.Format below to now.Format as the page function Now is deprecated. */}}
+  <p class="copyright">{{ with .Site.Params.copyright }}{{ . | markdownify}}{{ else }}&copy; {{.Now.Format "2006" }}. All rights reserved.<br />{{end}}
       <a href="https://github.com/tattwamasi">Site Design & Template by Tokotsi</a> | Powered by <a href="https://gohugo.io/">Hugo</a></p>
 </footer>
 
