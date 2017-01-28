@@ -6,7 +6,7 @@
       <li>
           <a href="{{ relURL .URL }}">
               {{ with .Identifier }}
-                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
+                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}({{ .URL }})
           </a>
       </li>
       {{ end }}
