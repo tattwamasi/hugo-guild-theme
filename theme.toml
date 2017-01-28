@@ -8,7 +8,7 @@ description = "A basic guild website theme"
 homepage = "https://github.com/tattwamasi/hugo-guild-theme/"
 tags = ["game", "guild", "blog"]
 features = ["html5", "css3"]
-min_version = 0.19
+min_version = 0.18
 
 [author]
   name = "Rob Arnold (Tokotsi)"
