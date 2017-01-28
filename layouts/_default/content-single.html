@@ -17,7 +17,7 @@
 </article>
 {{/*
 {{ .Render "pagination" }}
-
+*/}}
 {{ if ne .Site.DisqusShortname "" }}
     {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
         <article class="post">
@@ -25,5 +25,5 @@
         </article>
     {{ end }}
 {{ end }}
-*/}}
+
 </section>
