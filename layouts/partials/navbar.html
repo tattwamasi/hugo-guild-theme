@@ -6,7 +6,7 @@
       <li>
           <a href="{{ .URL }}">
               {{ with .Identifier }}
-                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
+                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}{{ printf "(%#v)" .URL }}
           </a>
       </li>
       {{ end }}

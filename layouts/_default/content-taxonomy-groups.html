@@ -15,7 +15,9 @@ the terms the page specifies.
         {{- $taxonomyname -}}
       </li>
       {{- range  $.Param $taxonomyname -}}
-      <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}/{{ . | urlize }}">{{ . }}</a></li>
+        {{ $taxUrl := urlize (printf "/%s/%s" $taxonomyname . )  }}
+        {{ printf "%#v" $taxUrl }}
+      <li><a href="{{ $taxUrl }}">{{ . }}</a></li>
       {{- end -}}
     </ul>
     {{- end -}}
