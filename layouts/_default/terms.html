@@ -9,7 +9,7 @@
     <h3><a href="{{ $value.Name | urlize }}">{{ $value.Name }}</a> {{ $value.Count }}</h3>
     <ul>
       {{ range $value.Pages.ByDate }}
-      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
     {{ end }}

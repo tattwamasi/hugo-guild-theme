@@ -1,12 +1,12 @@
 <header id="header">
-  <h1><a href={{relURL "/"}}>{{.Site.Params.guild.name }}</a></h1>
+  <h1><a href={{"/"}}>{{.Site.Params.guild.name }}</a></h1>
   <nav id="nav">
     <ul>
       {{ range .Site.Menus.main }}
       <li>
           <a href="{{ .URL }}">
-              {{ with .Identifier }}
-                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}{{ printf "(%#v)" .URL }}
+              {{- with .Identifier -}}
+                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name -}}
           </a>
       </li>
       {{ end }}

@@ -32,7 +32,7 @@
 
         {{ with .Site.Params.guild.recruitment }}
         <section>
-          {{if .pic}}<a {{with .url}}href="{{relURL .}}"{{end}} class="image"><img src={{relURL .pic}} /></a>{{end}}
+          {{if .pic}}<a {{with .url}}href="{{ . }}"{{end}} class="image"><img src={{ .pic }} /></a>{{end}}
           {{ with .blurb}}
           <h3>Recruitment Info</h3>
             <p>{{.|safeHTML}}</p>
@@ -40,7 +40,7 @@
           {{with .url}}
           <footer>
             <ul class="actions">
-              <li><a href="{{relURL .}}" class="button">Learn More</a></li>
+              <li><a href="{{ . }}" class="button">Learn More</a></li>
             </ul>
           </footer>
           {{end}}

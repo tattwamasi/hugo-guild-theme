@@ -7,7 +7,7 @@
 
       {{ with .Site.Params.guild.contact }}
       <section class="about">
-        {{if .pic}}<a {{with .url}}href="{{.}}"{{end}} class="image"><img src={{relURL .pic}} /></a>{{end}}
+        {{if .pic}}<a {{with .url}}href="{{.}}"{{end}} class="image"><img src={{.pic}} /></a>{{end}}
         {{ with .blurb}}
         <h3>Contact us</h3>
           <p>{{.|safeHTML}}</p>
@@ -37,11 +37,11 @@
 
 <!-- Scripts -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
-<script type="text/javascript" src={{ relURL "/js/prefixfree.jquery.js" }}></script>
-<script type="text/javascript" src={{ relURL "/js/jquery.sticky.js" }}></script>
-<script type='text/javascript' src={{ relURL "/js/guild.js" }}></script>
+<script type="text/javascript" src="/js/prefixfree.jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.sticky.js"></script>
+<script type='text/javascript' src="/js/guild.js"></script>
 <!-- <script type='text/javascript' src={{ relURL "/js/jquery.basic-parallax-scroll.js"}}></script>  -->
 
-<script src={{ relURL "js/jquery.dropotron.min.js"}}></script>
+<script src="/js/jquery.dropotron.min.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 {{ partial "footer_custom.html" . }}
