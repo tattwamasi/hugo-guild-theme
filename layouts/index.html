@@ -11,8 +11,8 @@
           <h2>News</h2>
         </header>
         <ul class="recent-news alt">
-        {{ if .Site.Taxonomies.categories.News }}
-          {{ range first .Site.Params.recentNewsSummaryLimit .Site.Taxonomies.categories.News }}
+        {{ if .Site.Taxonomies.categories.news }}
+          {{ range first .Site.Params.recentNewsSummaryLimit .Site.Taxonomies.categories.news }}
           {{/* printf "%#v" .Page */}}
           <li>{{ .Page.Render "summary" }}</li>
           {{ end }}
