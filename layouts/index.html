@@ -1,27 +1,27 @@
 {{define "main"}}
     <header class="major">
       <h2>About</h2>
-      <p>{{ .Site.Params.description | markdownify }}</p>
+      <p>{{ .Site.Params.guild.about | markdownify }}</p>
     </header>
 
     <section id="news" class="content">
-      {{ if .Site.Params.recentNewsSummaryLimit }}
+      {{ if .Site.Params.recentNewsSummaryLimit -}}
       <section class="recent-news">
           <header>
           <h2>News</h2>
         </header>
         <ul class="recent-news alt">
-        {{ if .Site.Taxonomies.categories.news }}
-          {{ range first .Site.Params.recentNewsSummaryLimit .Site.Taxonomies.categories.news }}
+        {{- if .Site.Taxonomies.categories.news -}}
+          {{ range first .Site.Params.recentNewsSummaryLimit .Site.Taxonomies.categories.news -}}
           {{/* printf "%#v" .Page */}}
           <li>{{ .Page.Render "summary" }}</li>
-          {{ end }}
-        {{ end }}
+          {{ end -}}
+        {{- end -}}
         </ul>
       </section>
-      {{ end }}
+      {{- end -}}
 
-      {{ if .Site.Params.recentItemListLimit }}
+      {{- if .Site.Params.recentItemListLimit }}
       <section class="recent-posts">
         <header>
           <h2>Recent Items</h2>

@@ -1,5 +1,5 @@
 <article class="post">
-  {{ .Render "featured" }}
+  {{- .Render "featured" -}}
   <div class="content group">
     {{ .Render "content-header" }}
     <div class="group post-body">
@@ -7,13 +7,12 @@
     </div>
     <footer>
       {{.Render "content-taxonomy-groups"}}
-      {{/* printf "%#v" .Truncated */}}
-      {{ if .Truncated }}
+      {{ if .Truncated -}}
       <ul class="actions vertical">
         <li><a href='{{ .RelPermalink }}' class="button small"><nobr>Read more →</nobr></a></li>
-        {{ if .Site.Params.includeReadingTime }}<li class="reading-time">(~{{ .ReadingTime }} minute read)</li>{{- end -}}
+        {{ if .Site.Params.includeReadingTime }}<li class="reading-time">(~{{ .ReadingTime }} minute read)</li>{{- end }}
       </ul>
-      {{ end }}
+      {{ end -}}
     </footer>
   </div>
 </article>

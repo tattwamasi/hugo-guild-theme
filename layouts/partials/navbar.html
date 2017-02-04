@@ -2,14 +2,11 @@
   <h1><a href="/index.html">{{.Site.Params.guild.name }}</a></h1>
   <nav id="nav">
     <ul>
-      {{ range .Site.Menus.main }}
-      <li>
-          <a href="{{ .URL }}">
+      {{- range .Site.Menus.main }}
+      <li><a href="{{ .URL }}">
               {{- with .Identifier -}}
-                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name -}}
-          </a>
-      </li>
-      {{ end }}
+                  <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name -}}</a></li>
+      {{- end }}
     </ul>
   </nav>
 </header>

@@ -4,7 +4,7 @@ the terms the page specifies.
 */ -}}
 
 <ul class="stats">
-{{- range $taxonomyname, $identifier := $.Site.Params.taxonomyinmeta -}}
+{{ range $taxonomyname, $identifier := $.Site.Params.taxonomyinmeta -}}
   {{- if isset $.Params $taxonomyname -}}
   {{- if ne (len ($.Param $taxonomyname)) 0 -}}
     <ul class="stats-{{$taxonomyname}}">
@@ -17,9 +17,9 @@ the terms the page specifies.
       {{- range  $.Param $taxonomyname -}}
         {{ $taxUrl := urlize (printf "/%s/%s" $taxonomyname . )  }}
       <li><a href="{{ $taxUrl }}">{{ . }}</a></li>
-      {{- end -}}
+      {{- end }}
     </ul>
-    {{- end -}}
+    {{ end -}}
     {{- end -}}
 {{- end -}}
 </ul>

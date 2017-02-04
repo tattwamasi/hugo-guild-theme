@@ -4,15 +4,14 @@
 <body>
 {{ partial "banner.html" . }}
 {{ partial "navbar.html" . }}
-
 <section class="wrapper sidebar right">
   <div class="inner">
-    {{ block "main" . }}
-    {{ end }}
-    {{ partial "sidebar.html" . }}
+    {{- block "main" . -}}
+    {{- end }}
+    {{- partial "sidebar.html" . }}
   </div>
 </section>
-{{ partial "footer.html" . }}
+{{- partial "footer.html" . -}}
 {{/* printf "%#v" $.Site */}}
 </body>
 </html>

@@ -1,4 +1,4 @@
-{{ with .Params.featured_image }}
+{{ with .Params.featured_image -}}
   <a href="{{ .RelPermalink }}" class="image featured"><img src="{{ . }}"
     alt="{{ with .Params.featuredalt }}{{ . }}{{ end }}"></a>
-{{ end }}
+{{- end }}

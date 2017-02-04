@@ -1,19 +1,17 @@
-<link href="https://fonts.googleapis.com/css?family={{.Site.Params.guild.namefont}}&text={{.Site.Params.guild.name}}" rel="stylesheet">
-<style>
-/* ======== Banner ============ */
-
-.banner-text h1 {
-  font-family: '{{ replace .Site.Params.guild.namefont "+" " "}}',serif;
-  font-size: 80px;
-  font-weight: normal;
-  text-transform: none;
-	animation-name: lens-flip-focus;
-	animation-duration: 2s;
-	animation-fill-mode:both;
-}
-
-#header h1 {
-  font-family: '{{ replace .Site.Params.guild.namefont "+" " "}}',serif;
-}
-
-</style>
+  <!-- computed banner and header font elements -->
+  <link href="https://fonts.googleapis.com/css?family={{.Site.Params.guild.namefont}}&text={{.Site.Params.guild.name}}" rel="stylesheet">
+  <style>
+  /* ======== Banner ============ */
+  .banner-text h1 {
+    font-family: '{{ replace .Site.Params.guild.namefont "+" " "}}',serif;
+    font-size: 80px;
+    font-weight: normal;
+    text-transform: none;
+  	animation-name: lens-flip-focus;
+  	animation-duration: 2s;
+  	animation-fill-mode:both;
+  }
+  #header h1 {
+    font-family: '{{ replace .Site.Params.guild.namefont "+" " "}}',serif;
+  }
+  </style>

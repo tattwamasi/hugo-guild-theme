@@ -1,9 +1,9 @@
 <header>
     <div class="title">
       <h5><a href="{{ .RelPermalink }}">{{ .Title }} {{ if .Draft }}<em>:: DRAFT</em>{{end}}</a></h5>
-        {{ with .Description }}
+        {{ with .Description -}}
             <p>{{ . | markdownify }}</p>
-        {{ end }}
+        {{ end -}}
     </div>
     <div class="meta">
       <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>
