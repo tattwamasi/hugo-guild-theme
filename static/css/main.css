@@ -2444,8 +2444,8 @@ body.is-mobile #footer {
 		opacity: 1;
 	}
 }
-/* Header */
 
+/* Header */
 
 #header {
 	background: #333355;
@@ -2457,6 +2457,22 @@ body.is-mobile #footer {
 	opacity: .9;
 	width: 100%;
 	z-index: 10000;
+}
+/*
+	fix anchor targets - the :target:before method is hacky, and the #news one is
+	horrid too.  The #news version was needed because for some reason the target
+	version didn't work on the news class, maybe because it was at the top of the
+	section?
+*/
+
+#news { padding-top: 2em;}
+
+:target:before {
+  content:"";
+  display:block;
+	visibility: hidden;
+  height: 2em; /* fixed header height*/
+  margin-top: -2em; /* negative fixed header height */
 }
 
 #header a {

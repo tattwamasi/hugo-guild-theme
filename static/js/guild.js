@@ -1,12 +1,13 @@
 jQuery(document).ready(function($) {
 	// set up the sticky navbar
 	$("#header").sticky({zIndex:10002});
+
 /*
 	$(".banner").parallaxScroll({
 		friction: .1,
 		direction: "vertical"
 	});
-	
+
 	$("#footer").parallaxScroll({
 		friction: 1,
 		direction: "vertical"
@@ -34,3 +35,21 @@ jQuery(document).ready(function($) {
 	});
 
 });
+/*  had issues too... just trying fixed header size
+
+// handle hashes when page loads
+// <http://stackoverflow.com/a/29853395>
+function adjustAnchor() {
+  const $anchor = $(':target');
+  const fixedElementHeight = $('#header').outerHeight();
+  if ($anchor.length > 0)
+    window.scrollTo(0, $anchor.offset().top - fixedElementHeight);
+}
+$(window).on('hashchange load', adjustAnchor);
+$('body').on('click', "a[href^='#']", function (ev) {
+  if (window.location.hash === $(this).attr('href')) {
+    ev.preventDefault();
+    adjustAnchor();
+  }
+});
+*/
