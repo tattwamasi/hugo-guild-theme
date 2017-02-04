@@ -1,9 +1,16 @@
-{{define "main"}}
-    <header class="major">
-      <h2>404</h2>
-      <p>Sorry, but the page you are looking for could not be found.</p>
-      <p><a href="/index.html" class="button special icon fa-home">Home</a><p>
-    </header>
-    <section id="news" class="content">
-    </section>
-{{end}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Site.Title }} - Page Not Found</title>
+  {{ partial "banner_header_fonts.html" .}}
+</head>
+<body>
+{{ partial "banner.html" . }}
+
+  <header class="major">
+    <h2>404</h2>
+    <p>Sorry, but the page you are looking for could not be found.</p>
+  </header>
+</body>
+</html>
