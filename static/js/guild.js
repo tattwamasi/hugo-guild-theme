@@ -1,3 +1,8 @@
+$('html').css({visibility:'hidden'});
+$(document).ready(function() {
+	$('html').css({visibility:'visible'});
+});
+
 jQuery(document).ready(function($) {
 	// set up the sticky navbar
 	$("#header").sticky({zIndex:10002});

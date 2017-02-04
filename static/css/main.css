@@ -2394,6 +2394,7 @@ body.is-mobile #footer {
 }
 
 /* banner - some of this is also in banner_header_fonts.html as it requires Hugo processing */
+
 .banner-wrapper { overflow-y: hidden;}
 
 .banner {
