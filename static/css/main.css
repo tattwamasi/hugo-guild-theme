@@ -2421,31 +2421,6 @@ body.is-mobile #footer {
 
 }
 
-@keyframes lens-flip-focus {
-	0% {
-		opacity: .4;
-		text-shadow: 0 0 rgba(255,255,255,0), -45px -45px 0 red, -30px -30px 0 orange, -15px -15px 0 yellow, 0 0 0 green, 15px 15px 0 blue, 30px 30px 0 indigo, 45px 45px 0 violet;
-		transform: skew(45deg,60deg);
-		animation-timing-function: ease-in-out;
-	}
-	75% {
-		transform: skew(-10deg,-10deg);
-	}
-	80% {
-		text-shadow: 0px 0px 10px rgba(255,255,255,0.6), 0px 0px 30px rgba(255,255,255,0.4), 0px 0px 50px rgba(255,255,255,0.3), 0px 0px 180px rgba(255,255,255,0.3);
-		transform: skew(0deg,0deg);
-	}
-	95% {
-		text-shadow: 0 0 150px rgb(204,133,0), 0 0 60px rgb(204,133,0), 0 0 10px rgb(204,133,0);
-
-	}
-	100% {
-		color: rgba(254,208,120,1);
-		text-shadow: 0 0 30px rgba(204,133,0, 0.5), 0 0 5px rgba(204,133,0, 0.5);
-		opacity: 1;
-	}
-}
-
 /* Header */
 
 #header {
