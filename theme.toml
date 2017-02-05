@@ -11,5 +11,5 @@ features = ["html5", "css3"]
 min_version = 0.18
 
 [author]
-  name = "Rob Arnold (Tokotsi)"
+  name = "Rob Arnold"
   homepage = "https://rob.loci.net"
