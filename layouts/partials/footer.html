@@ -42,5 +42,5 @@
 <!-- <script type='text/javascript' src={{ relURL "/js/jquery.basic-parallax-scroll.js"}}></script>  -->
 <script type='text/javascript' src="/js/util.js"></script>
 <script type='text/javascript' src="/js/guild.js"></script>
-
+{{ with .Site.DisqusShortname }}<script id="dsq-count-scr" src="//{{ . }}.disqus.com/count.js" async></script>{{ end }}
 {{ partial "footer_custom.html" . }}
