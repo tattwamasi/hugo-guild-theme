@@ -22,4 +22,8 @@ the terms the page specifies.
     {{ end -}}
     {{- end -}}
 {{- end -}}
+{{ partial "set_disqus_comments_enabled.html" . }}
+{{ if .Scratch.Get "disqus_comments_enabled" }}
+  <ul><li><a href="{{.Permalink}}#disqus_thread"></a></li></ul>
+{{ end }}
 </ul>

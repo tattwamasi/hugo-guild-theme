@@ -20,7 +20,8 @@
 */}}
 {{ if ne .Site.DisqusShortname "" }}
     {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-      {{ if or (.Params.comment) (and (not (isset .Params "comment")) (eq .Section "post")) }}
+      {{ partial "set_disqus_comments_enabled.html" . }}
+      {{ if .Scratch.Get "disqus_comments_enabled" }}
           <article class="post">
             {{ template "_internal/disqus.html" . }}
         </article>
