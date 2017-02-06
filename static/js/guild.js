@@ -1,26 +1,63 @@
+
+//	Portions from Archetype by Pixelarity pixelarity.com and others
+(function($) {
+	$(function() {
+
+		var	$window = $(window),
+			$body = $('body'),
+			$banner = $('#banner'),
+			$header = $('#header');
+
+		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
+			$window.on('load', function() {
+				window.setTimeout(function() {
+					$body.removeClass('is-loading');
+				}, 100);
+			});
+
+		// Dropdowns.
+			$('#nav > ul').dropotron({
+				alignment: 'right',
+				hideDelay: 400
+			});
+
+
+					// Off-Canvas Navigation.
+
+						// Navigation Panel Toggle.
+							$('<a href="#navPanel" class="navPanelToggle"></a>')
+								.appendTo($header);
+
+						// Navigation Panel.
+							$(
+								'<div id="navPanel">' +
+									'<nav>' +
+										$('#nav').navList() +
+									'</nav>' +
+									'<a href="#navPanel" class="close"></a>' +
+								'</div>'
+							)
+								.appendTo($body)
+								.panel({
+									delay: 500,
+									hideOnClick: true,
+									hideOnSwipe: true,
+									resetScroll: true,
+									resetForms: true,
+									side: 'right'
+								});
+
+
+	});
+
+})(jQuery);
+
 jQuery(document).ready(function($) {
 	// set up the sticky navbar
 	$("#header").sticky({zIndex:10002});
 
-/*
-	$(".banner").parallaxScroll({
-		friction: .1,
-		direction: "vertical"
-	});
-
-	$("#footer").parallaxScroll({
-		friction: 1,
-		direction: "vertical"
-	});
-*/
-/*
-	// set the footer banner background image height to be same as the footer
-	// so that the fixed background scroll is properly sized.
-	var footerheight = $(".footer").outerHeight();
-	$('#footer').css({
-		'background-size' : "cover"
-	});
-*/
 	// set up the banner image parallax scroll / fade effect
 	$(window).scroll(function(e){
 			$('.banner').css({
@@ -35,21 +72,3 @@ jQuery(document).ready(function($) {
 	});
 
 });
-/*  had issues too... just trying fixed header size
-
-// handle hashes when page loads
-// <http://stackoverflow.com/a/29853395>
-function adjustAnchor() {
-  const $anchor = $(':target');
-  const fixedElementHeight = $('#header').outerHeight();
-  if ($anchor.length > 0)
-    window.scrollTo(0, $anchor.offset().top - fixedElementHeight);
-}
-$(window).on('hashchange load', adjustAnchor);
-$('body').on('click', "a[href^='#']", function (ev) {
-  if (window.location.hash === $(this).attr('href')) {
-    ev.preventDefault();
-    adjustAnchor();
-  }
-});
-*/
