@@ -20,9 +20,11 @@
 */}}
 {{ if ne .Site.DisqusShortname "" }}
     {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-        <article class="post">
+      {{ if or (.Params.comment) (and (not (isset .Params "comment")) (eq .Section "post")) }}
+          <article class="post">
             {{ template "_internal/disqus.html" . }}
         </article>
+      {{ end }}
     {{ end }}
 {{ end }}
 
