@@ -4,7 +4,7 @@ description = ""
 draft=true
 featured_image = ""
 featuredalt = ""
-categories = ["News"]
+categories = ["news"]
 tags = []
 +++
 

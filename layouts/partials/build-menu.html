@@ -1,0 +1,28 @@
+{{/*
+  Build an arbitrarily deep nested menu structure.
+  Partial is called with params like (dict "currentPage" . "menu" .Site.Menus.main)
+*/}}
+{{ $currentPage := .currentPage }}
+<ul>
+{{- range .menu }}
+{{ if .HasChildren }}
+  <li class="sub-menu{{if $currentPage.HasMenuCurrent "main" . }} active{{end}}">
+    <a href="{{.URL }}" class="">
+      {{ .Pre }}
+      <span>{{ .Name }}</span>
+      <span class="menu-arrow arrow_carrot-right"></span>
+      {{ .Post }}
+      </a>
+    {{ partial "build-menu.html" (dict "currentPage" $currentPage "menu" .Children) }}
+  </li>
+{{ else }}
+  <li{{if $currentPage.IsMenuCurrent "main" . }} class="active"{{end}}>
+    <a href="{{ .URL }}">
+      {{ .Pre }}
+      <span>{{ .Name }}</span>
+      {{ .Post }}
+    </a>
+  </li>
+{{end}}
+{{end}}
+</ul>
